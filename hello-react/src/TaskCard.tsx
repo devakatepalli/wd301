@@ -14,9 +14,9 @@ const TaskCard: React.FC<TaskCardProps> = ({ title, dueDate, completedAtDate, as
   return (
     <div className="task-card">
       <h3 className="task-title">{title}</h3>
-      {dueDate && <p className="task-meta">Due: {dueDate}</p>}
+      {dueDate && <p className="task-meta">Due on: {dueDate}</p>}
       {completedAtDate && <p className="task-meta" style={{ color: "green" }}>Completed on: {completedAtDate}</p>}
-      <p className="task-meta">Assigned to: {assigneeName}</p>
+      <p className="task-meta">Assignee: {assigneeName}</p>
     </div>
   );
 };
