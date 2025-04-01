@@ -5,12 +5,14 @@ import "./index.css";
 
 const rootElement = document.getElementById("root");
 
-if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+if (!rootElement) {
+  throw new Error(
+    "Root element with ID 'root' not found. Ensure index.html has a <div id='root'></div>",
   );
-} else {
-  console.error("Root element not found.");
 }
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);

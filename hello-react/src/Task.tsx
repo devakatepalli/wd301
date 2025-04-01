@@ -10,12 +10,21 @@ interface TaskCardProps {
 }
 
 // Define and export TaskCard as default
-const TaskCard: React.FC<TaskCardProps> = ({ title, dueDate, completedAtDate, assigneeName }) => {
+const TaskCard: React.FC<TaskCardProps> = ({
+  title,
+  dueDate,
+  completedAtDate,
+  assigneeName,
+}) => {
   return (
     <div className="task-card">
       <h3 className="task-title">{title}</h3>
       {dueDate && <p className="task-meta">Due on: {dueDate}</p>}
-      {completedAtDate && <p className="task-meta" style={{ color: "green" }}>Completed on: {completedAtDate}</p>}
+      {completedAtDate && (
+        <p className="task-meta" style={{ color: "green" }}>
+          Completed on: {completedAtDate}
+        </p>
+      )}
       <p className="task-meta">Assignee: {assigneeName}</p>
     </div>
   );
